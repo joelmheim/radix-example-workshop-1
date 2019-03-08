@@ -7,11 +7,11 @@
 var request = require('supertest');
 var expect = require('chai').expect;
 
-// start app server here 
+// start app server here
 var app = require('../app');
 
 beforeEach(function () {
- 
+
 });
 
 // Run test on end-point
@@ -37,6 +37,7 @@ describe('Testing index router', function () {
                 expect(res.body).to.have.property('RADIX_ENVIRONMENT');
                 expect(res.body).to.have.property('HOSTNAME');
                 expect(res.body).to.have.property('HOSTPLATFORM');
+                expect(res.body).to.have.property('RADIX_APP');
             })
             .end(function (err) {
                 if (err)
